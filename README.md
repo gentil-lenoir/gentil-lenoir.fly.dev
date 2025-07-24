@@ -1,3 +1,6 @@
+# gentil-lenoir.fly.dev
+Le Site Web Vitrine et Personnel pour Gentil Le NoiR! On y trouvera les informations sur Genti tel que le blog, les contacts, les actuaites, la biographie et on pourra discuter en temps reel avec moi
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

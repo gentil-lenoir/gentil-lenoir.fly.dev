@@ -1,0 +1,242 @@
+3: Connection: opening to smtp.gmail.com:587, timeout=300, options=array()
+3: Connection: opened
+2: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-45870532a4csm31556385e9.7 - gsmtp
+
+1: CLIENT -> SERVER: EHLO localhost
+
+2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [45.221.4.7]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+1: CLIENT -> SERVER: STARTTLS
+
+2: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+1: CLIENT -> SERVER: EHLO localhost
+
+2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [45.221.4.7]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+1: CLIENT -> SERVER: AUTH LOGIN
+
+2: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+1: CLIENT -> SERVER: [credentials hidden]
+2: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+1: CLIENT -> SERVER: [credentials hidden]
+2: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+1: CLIENT -> SERVER: MAIL FROM:<gentillenoir075@gmail.com>
+
+2: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-45870532a4csm31556385e9.7 - gsmtp
+
+1: CLIENT -> SERVER: RCPT TO:<gentillenoir075@email.com>
+
+2: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-45870532a4csm31556385e9.7 - gsmtp
+
+1: CLIENT -> SERVER: DATA
+
+2: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-45870532a4csm31556385e9.7 - gsmtp
+
+1: CLIENT -> SERVER: Date: Thu, 24 Jul 2025 20:59:26 +0000
+
+1: CLIENT -> SERVER: To: Gentil <gentillenoir075@email.com>
+
+1: CLIENT -> SERVER: From: Site Vitrine <gentillenoir075@gmail.com>
+
+1: CLIENT -> SERVER: Reply-To: xzxz <gentillenoir075@gmail.com>
+
+1: CLIENT -> SERVER: Subject: Nouveau message de xzxz
+
+1: CLIENT -> SERVER: Message-ID: <BqsC6gsFMkoiFJNo0neMOK0zrti6UpRWbUkbE6sw@localhost>
+
+1: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+1: CLIENT -> SERVER: MIME-Version: 1.0
+
+1: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+1: CLIENT -> SERVER:  boundary="b1=_BqsC6gsFMkoiFJNo0neMOK0zrti6UpRWbUkbE6sw"
+
+1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: --b1=_BqsC6gsFMkoiFJNo0neMOK0zrti6UpRWbUkbE6sw
+
+1: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: zxzxzxz
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: --b1=_BqsC6gsFMkoiFJNo0neMOK0zrti6UpRWbUkbE6sw
+
+1: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER:             <h1>Nouveau message depuis le formulaire de contact</h1>
+
+1: CLIENT -> SERVER:             <p><strong>Nom:</strong> xzxz</p>
+
+1: CLIENT -> SERVER:             <p><strong>Email:</strong> gentillenoir075@gmail.com</p>
+
+1: CLIENT -> SERVER:             <p><strong>Message:</strong><br>zxzxzxz</p>
+
+1: CLIENT -> SERVER:         
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: --b1=_BqsC6gsFMkoiFJNo0neMOK0zrti6UpRWbUkbE6sw--
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: .
+
+2: SERVER -> CLIENT: 250 2.0.0 OK  1753390769 5b1f17b1804b1-45870532a4csm31556385e9.7 - gsmtp
+
+1: CLIENT -> SERVER: QUIT
+
+2: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-45870532a4csm31556385e9.7 - gsmtp
+
+3: Connection: closed
+3: Connection: opening to smtp.gmail.com:587, timeout=300, options=array()
+3: Connection: opened
+2: SERVER -> CLIENT: 220 smtp.gmail.com ESMTP 5b1f17b1804b1-4586f5169a2sm22398045e9.4 - gsmtp
+
+1: CLIENT -> SERVER: EHLO localhost
+
+2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [45.221.4.7]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+1: CLIENT -> SERVER: STARTTLS
+
+2: SERVER -> CLIENT: 220 2.0.0 Ready to start TLS
+
+1: CLIENT -> SERVER: EHLO localhost
+
+2: SERVER -> CLIENT: 250-smtp.gmail.com at your service, [45.221.4.7]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+1: CLIENT -> SERVER: AUTH LOGIN
+
+2: SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+1: CLIENT -> SERVER: [credentials hidden]
+2: SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+1: CLIENT -> SERVER: [credentials hidden]
+2: SERVER -> CLIENT: 235 2.7.0 Accepted
+
+1: CLIENT -> SERVER: MAIL FROM:<gentillenoir075@gmail.com>
+
+2: SERVER -> CLIENT: 250 2.1.0 OK 5b1f17b1804b1-4586f5169a2sm22398045e9.4 - gsmtp
+
+1: CLIENT -> SERVER: RCPT TO:<gentillenoir075@email.com>
+
+2: SERVER -> CLIENT: 250 2.1.5 OK 5b1f17b1804b1-4586f5169a2sm22398045e9.4 - gsmtp
+
+1: CLIENT -> SERVER: DATA
+
+2: SERVER -> CLIENT: 354 Go ahead 5b1f17b1804b1-4586f5169a2sm22398045e9.4 - gsmtp
+
+1: CLIENT -> SERVER: Date: Thu, 24 Jul 2025 20:59:49 +0000
+
+1: CLIENT -> SERVER: To: Gentil <gentillenoir075@email.com>
+
+1: CLIENT -> SERVER: From: Site Vitrine <gentillenoir075@gmail.com>
+
+1: CLIENT -> SERVER: Reply-To: zxzxzx <gentillenoir075@gmail.com>
+
+1: CLIENT -> SERVER: Subject: Nouveau message de zxzxzx
+
+1: CLIENT -> SERVER: Message-ID: <PD9jXmBw4z9jV9ncFJrXD2BzL98tAsn0QyfiYyYrGg@localhost>
+
+1: CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+1: CLIENT -> SERVER: MIME-Version: 1.0
+
+1: CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+1: CLIENT -> SERVER:  boundary="b1=_PD9jXmBw4z9jV9ncFJrXD2BzL98tAsn0QyfiYyYrGg"
+
+1: CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: --b1=_PD9jXmBw4z9jV9ncFJrXD2BzL98tAsn0QyfiYyYrGg
+
+1: CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: zxzxzx
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: --b1=_PD9jXmBw4z9jV9ncFJrXD2BzL98tAsn0QyfiYyYrGg
+
+1: CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER:             <h1>Nouveau message depuis le formulaire de contact</h1>
+
+1: CLIENT -> SERVER:             <p><strong>Nom:</strong> zxzxzx</p>
+
+1: CLIENT -> SERVER:             <p><strong>Email:</strong> gentillenoir075@gmail.com</p>
+
+1: CLIENT -> SERVER:             <p><strong>Message:</strong><br>zxzxzx</p>
+
+1: CLIENT -> SERVER:         
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: --b1=_PD9jXmBw4z9jV9ncFJrXD2BzL98tAsn0QyfiYyYrGg--
+
+1: CLIENT -> SERVER: 
+
+1: CLIENT -> SERVER: .
+
+2: SERVER -> CLIENT: 250 2.0.0 OK  1753390791 5b1f17b1804b1-4586f5169a2sm22398045e9.4 - gsmtp
+
+1: CLIENT -> SERVER: QUIT
+
+2: SERVER -> CLIENT: 221 2.0.0 closing connection 5b1f17b1804b1-4586f5169a2sm22398045e9.4 - gsmtp
+
+3: Connection: closed

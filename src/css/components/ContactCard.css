@@ -1,0 +1,40 @@
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  background: #23232a;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  gap: 1.2rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.contact-card:hover {
+  box-shadow: 0 4px 16px rgba(56,189,248,0.15);
+  transform: translateY(-2px) scale(1.01);
+}
+.contact-card .icon {
+  font-size: 2.1rem;
+  color: #38bdf8;
+  margin-top: 0.2rem;
+}
+.contact-card .info h3 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+.contact-card .info a, .contact-card .info span {
+  color: #cbd5e1;
+  font-size: 1rem;
+  text-decoration: none;
+  word-break: break-all;
+}
+.contact-card .info a:hover {
+  color: #38bdf8;
+}
+.contact-card .suggestion {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-top: 0.2rem;
+}

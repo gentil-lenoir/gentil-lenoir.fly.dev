@@ -1,0 +1,70 @@
+.portfolio-section {
+  background: #18181b;
+  color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.portfolio-title {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: #38bdf8;
+}
+.cards-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.one-portfolio {
+  background: #23232a;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1rem;
+  width: 260px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.one-portfolio:hover {
+  box-shadow: 0 4px 16px rgba(56,189,248,0.15);
+  transform: translateY(-2px) scale(1.01);
+}
+.one-portfolio img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+.one-portfolio h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  color: #38bdf8;
+}
+.one-portfolio p {
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+/* Skills */
+.skills-section {
+  margin: 3rem 0;
+}
+.one-skill {
+  margin-bottom: 1.2rem;
+}
+.skill-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+.skillbar {
+  background: #2c2c35;
+  height: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.skill-level {
+  background: linear-gradient(to right, #38bdf8, #2563eb);
+  height: 100%;
+  width: 0%;
+  border-radius: 8px;
+  transition: width 1.5s ease-in-out;
+}

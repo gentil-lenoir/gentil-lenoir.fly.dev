@@ -1,0 +1,98 @@
+.home-page {
+  background: #18181b;
+  color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.welcomes-h1 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: #38bdf8;
+}
+.gentil-passeport-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.gentil-passeport {
+  width: 120px;
+  border-radius: 50%;
+  border: 3px solid #38bdf8;
+}
+.gentil-description {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+.link {
+  display: block;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #38bdf8;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.contacts-section {
+  background: #0b0b14;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1.2rem 0;
+  padding-left: 10%;
+  color: #fff;
+}
+.cv-section {
+  margin: 1.2rem 0;
+  text-align: center;
+}
+.cv-section a {
+  color: #38bdf8;
+  text-decoration: none;
+  margin-right: 1.2rem;
+  font-weight: 500;
+}
+.cv-section a:hover {
+  text-decoration: underline;
+}
+
+.competences {
+  background: #23232a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+}
+.competences h4 {
+  color: #38bdf8;
+  margin-top: 1rem;
+}
+.competences p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+.bio-sect {
+  background: #1f1f27;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+.bio-sect p {
+  line-height: 1.7;
+  color: #e2e8f0;
+}
+.one-contact {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.contact-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.8rem;
+}

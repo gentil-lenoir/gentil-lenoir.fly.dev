@@ -1,0 +1,45 @@
+.bio-section {
+  background: #18181b;
+  color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.bio-title {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: #38bdf8;
+}
+.cv-section {
+  margin: 1.2rem 0;
+}
+.cv-section a {
+  color: #38bdf8;
+  text-decoration: none;
+  margin-right: 1.2rem;
+  font-weight: 500;
+}
+.cv-section a:hover {
+  text-decoration: underline;
+}
+.bio-content {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-top: 1.2rem;
+}
+.bio-content p{
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    text-indent: 1.5rem;
+}
+.link a{
+  color: #38bdf8;
+  font-weight: bold;
+  text-decoration: none;
+}
+.link a:hover{
+  text-decoration: underline;
+}

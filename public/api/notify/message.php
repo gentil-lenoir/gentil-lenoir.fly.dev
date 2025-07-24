@@ -16,10 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupération des données
-    $data = json_decode(file_get_contents('php://input'), true);
-    
-    // Alternative si vous envoyez en FormData
+    // Récupération des données FormData
     $name = $_POST['user_name'] ?? '';
     $email = $_POST['user_email'] ?? '';
     $message = $_POST['message'] ?? '';
@@ -39,43 +36,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Configuration PHPMailer
     $mail = new PHPMailer(true);
+    $mail->SMTPDebug = 2; // Niveau de debug: 0 = off, 2 = détails
+    $mail->Debugoutput = 'error_log'; // Envoie les logs dans les erreurs PHP
 
     try {
-        // Paramètres SMTP
+        // Paramètres SMTP Gmail
         $mail->isSMTP();
-        $mail->SMTPDebug = 3;
-        $mail->Debugoutput = function($str, $level) {
-            file_put_contents('mail_debug.log', "$level: $str\n", FILE_APPEND);
-        };
         $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
+        $mail->SMTPSecure = 'tls'; // TLS obligatoire pour Gmail
         $mail->SMTPAuth = true;
         $mail->Username = 'gentillenoir075@gmail.com';
-        $mail->Password = 'igtv elqr rypn yzby';
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Ou 'ssl'
-        $mail->Port = 587;
+        $mail->Password = 'igtv elqr rypn yzby'; // Mot de passe d'application
+        
+        // Encodage
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
 
-        // Destinataires
-        $mail->setFrom('gentillenoir075@gmail.com', 'Site Vitrine');
-        $mail->addAddress('gentillenoir075@email.com', 'Gentil'); // Email de destination
-        $mail->addReplyTo($email, $name);
+        // Expéditeur et destinataire
+        $mail->setFrom('contact@gentil.com', 'Site Vitrine'); // Utilisez un domaine que vous contrôlez
+        $mail->addAddress('gentillenoir075@gmail.com', 'Gentil'); // Adresse Outlook comme destinataire
+        $mail->addReplyTo($email, $name); // Permet de répondre directement à l'expéditeur
 
-        // Contenu
+        // Contenu du message
         $mail->isHTML(true);
         $mail->Subject = 'Nouveau message de ' . $name;
         $mail->Body = "
-            <h1>Nouveau message depuis le formulaire de contact</h1>
+            <h1>Nouveau message depuis le formulaire de contact || Votre Site Vitrine</h1>
             <p><strong>Nom:</strong> {$name}</p>
             <p><strong>Email:</strong> {$email}</p>
-            <p><strong>Message:</strong><br>" . nl2br($message) . "</p>
+            <p><strong>Message:</strong><br>" . nl2br(htmlspecialchars($message)) . "</p>
         ";
-        $mail->AltBody = strip_tags($message);
+        $mail->AltBody = strip_tags($message); // Version texte brut
 
-        $mail->send();
-        $response['success'] = true;
-        $response['message'] = 'Message envoyé avec succès';
+        if ($mail->send()) {
+            $response['success'] = true;
+            $response['message'] = 'Message envoyé avec succès';
+            error_log("Email envoyé à " . date('Y-m-d H:i:s'));
+        } else {
+            throw new Exception("Erreur lors de l'envoi");
+        }
     } catch (Exception $e) {
-        $response['success'] = false;
-        $response['message'] = "Le message n'a pas pu être envoyé. Erreur: {$mail->ErrorInfo}";
+        $error = "Erreur PHPMailer: " . $e->getMessage() . " | " . $mail->ErrorInfo;
+        error_log($error);
+        $response['message'] = "Erreur d'envoi. Veuillez réessayer plus tard.";
     }
 } else {
     $response['message'] = 'Méthode non autorisée';

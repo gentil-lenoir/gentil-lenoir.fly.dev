@@ -1,25 +1,81 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/views/Home.css';
 import ContactForm from '../components/ContactForm.tsx';
 
 const Home = () => {
   const gentilAge = new Date().getFullYear() - 2007;
+  const [isTracked, setIsTracked] = useState(false);
 
-  useEffect(() => {
-    const timestamp = new Date().toISOString();
-    const userAgent = navigator.userAgent;
+  // Fonction de tracking avec mémoïsation et vérification de session
+  const trackVisitor = React.useCallback(async () => {
+    if (isTracked) return;
+    
+    try {
+      const timestamp = new Date().toISOString();
+      const userAgent = navigator.userAgent;
 
-    console.log("Visiteur détecté :", timestamp, userAgent);
+      // Vérifier si déjà tracké dans sessionStorage
+      const lastTracked = sessionStorage.getItem('lastTracked');
+      if (lastTracked && Date.now() - parseInt(lastTracked) < 3600000) { // 1 heure
+        return;
+      }
 
-    fetch(`http://localhost:8088/notify/visitors.php`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ time: timestamp, ue: userAgent })
-    })
-      .then(res => res.json())
-      .then(data => console.log("Visiteur enregistré :", data))
-      .catch(err => console.error("Erreur d'enregistrement :", err));
-  }, []);
+      // Récupération IP et géolocalisation
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const { ip } = await ipResponse.json();
+      
+      const geoResponse = await fetch(`https://ipapi.co/${ip}/json/`);
+      const geoData = await geoResponse.json();
+
+      // Données à envoyer
+      const visitorData = {
+        time: timestamp,
+        ue: userAgent,
+        ip: ip,
+        country: geoData.country_name,
+        city: geoData.city,
+        region: geoData.region,
+        loc: `${geoData.latitude},${geoData.longitude}`,
+        device: {
+          screen: `${window.screen.width}x${window.screen.height}`,
+          language: navigator.language
+        },
+        page: 'home'
+      };
+
+      // Envoi au backend
+      await fetch(`http://localhost:8088/notify/visitors.php`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(visitorData)
+      });
+
+      sessionStorage.setItem('lastTracked', Date.now().toString());
+      setIsTracked(true);
+      
+    } catch (err) {
+      console.error("Erreur tracking:", err);
+      // Envoi minimal en cas d'erreur
+      await fetch(`http://localhost:8088/notify/visitors.php`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          time: new Date().toISOString(), 
+          ue: navigator.userAgent,
+          page: 'home'
+        })
+      });
+    }
+  }, [isTracked]);
+
+  // useEffect(() => {
+  //   // Délai pour éviter de bloquer le rendu initial
+  //   const timer = setTimeout(() => {
+  //     trackVisitor();
+  //   }, 3000); // 3 secondes après le chargement
+
+  //   return () => clearTimeout(timer);
+  // }, [trackVisitor]);
 
   const ContactCard = (label: string, value: string, icon: string) => (
     <div className="one-contact">

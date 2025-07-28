@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
       <meta charset="utf-8" />
@@ -40,6 +40,6 @@
   </head>
   <body class="body">
     <h1 class="title">Bienvenue au site vitrine (personnel) Gentil Le NoiR M.B. </h1>
-    <p class="paragraph"><a href="https://gentil-lenoir.fly.dev">Acceder à la page d'accueil...</a></p>
+    <p class="paragraph"><a href="https://gentil-lenoir.vercel.app">Acceder à la page d'accueil...</a></p>
   </body>
-</html> -->
+</html> 

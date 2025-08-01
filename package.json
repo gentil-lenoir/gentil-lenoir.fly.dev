@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@vercel/analytics": "^1.5.0",
     "i18next": "^25.3.2",
+    "mkdirp": "^3.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-helmet-async": "^2.0.5",
